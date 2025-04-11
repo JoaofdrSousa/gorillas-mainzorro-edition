@@ -1,2 +1,3 @@
-# gorillas-mainzorro-edition
-Projeto Main e Cogito
+# Gorillas Mainzorro Edition
+
+Versão adaptada para correr no browser com js-dos.
