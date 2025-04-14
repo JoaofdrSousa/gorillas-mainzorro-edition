@@ -160,7 +160,7 @@ function update(){
 }
 
 function askNames(){
-    controls.innerHTML = controls.innerHTML = `Player 1 Name: <input id="p1" value="Player 1"><br>
+    controls.innerHTML = `Player 1 Name: <input id="p1" value="Player 1"><br>
 Player 2 Name: <input id="p2" value="Player 2"><br>
 <button onclick="startGame()">Start Game</button>`;
 }
