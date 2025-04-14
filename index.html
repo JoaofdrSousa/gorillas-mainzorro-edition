@@ -5,33 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gorillas - Mainzorro Edition</title>
 <style>
-body { background-color: black; color: white; font-family: monospace; text-align: center; margin: 0; padding: 0; }
-canvas {
-  width: 100%;
-  max-width: 1200px; /* máximo para desktop */
-  height: auto;
-  display: block;
-  margin: 20px auto;
-  border: 1px solid white;
-  background-color: #222;
-}
-#controls { margin: 10px auto;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-input, button {
-  padding: 5px;
-  font-size: 16px;
-  width: 100%;
-  box-sizing: border-box;
-}
-</style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    canvas {
+      border: 1px solid white;
+      background-color: #222;
+    }
+  </style>
 </head>
 <body>
 <h1>QBasic Gorillas - Mainzorro Edition</h1>
-<canvas id="gameCanvas"></canvas>
+<canvas id="gameCanvas" width="1000" height="600"></canvas>
 <div id="controls">
 <div id="playerInputs"></div>
 </div>
