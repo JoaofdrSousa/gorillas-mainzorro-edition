@@ -168,9 +168,13 @@ function startGame(){
 }
 
 function nextTurn(){
-    controls.innerHTML = `${playerNames[currentPlayer]}'s turn - Angle (deg): <input id="angle" value="45">
-    Power: <input id="power" value="10">
-    <button onclick="throwBanana()">Throw</button>`;
+    controls.innerHTML = `
+	<h2 style="color:yellow; margin-bottom:10px;">
+	⚡ VEZ DE: ${playerNames[currentPlayer].toUpperCase()} ⚡
+	</h2>
+	Angle (deg): <input id="angle" value="45">
+	Power: <input id="power" value="10">
+	<button onclick="throwBanana()">Throw</button>`;
 }
 function resizeCanvas(){
   canvas.width = Math.min(window.innerWidth - 40, 1200);
