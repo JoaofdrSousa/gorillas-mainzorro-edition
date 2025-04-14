@@ -188,12 +188,7 @@ function nextTurn(){
 <button onclick="throwBanana()">LANÇAR</button>
 `;
 }
-function resizeCanvas(){
-  canvas.width = Math.min(window.innerWidth - 40, 1200);
-  canvas.height = Math.min(window.innerHeight - 200, 700);
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
+
 
 askNames();
 update();
