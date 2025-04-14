@@ -160,9 +160,14 @@ function update(){
 }
 
 function askNames(){
-    controls.innerHTML = `Player 1 Name: <input id="p1" value="Player 1"><br>
-    Player 2 Name: <input id="p2" value="Player 2"><br>
-    <button onclick="startGame()">Start Game</button>`;
+   controls.innerHTML = `
+<h2 style="color:yellow;">VEZ DE: ${playerNames[currentPlayer].toUpperCase()}</h2>
+<label>Ângulo (0-180):</label>
+<input id="angle" value="45">
+<label>Força:</label>
+<input id="power" value="10">
+<button onclick="throwBanana()">LANÇAR</button>
+`;
 }
 
 function startGame(){
@@ -175,12 +180,13 @@ function startGame(){
 
 function nextTurn(){
   controls.innerHTML = `
-<h2 style="color:yellow; margin-bottom:10px;">
-⚡ VEZ DE: ${playerNames[currentPlayer].toUpperCase()} ⚡
-</h2>
-Angle (deg): <input id="angle" value="45">
-Power: <input id="power" value="10">
-<button onclick="throwBanana()">Throw</button>`;
+<h2 style="color:yellow;">VEZ DE: ${playerNames[currentPlayer].toUpperCase()}</h2>
+<label>Ângulo (0-180):</label>
+<input id="angle" value="45">
+<label>Força:</label>
+<input id="power" value="10">
+<button onclick="throwBanana()">LANÇAR</button>
+`;
 }
 function resizeCanvas(){
   canvas.width = Math.min(window.innerWidth - 40, 1200);
