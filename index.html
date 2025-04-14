@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gorillas - Mainzorro Edition</title>
+<style>
+body { background-color: black; color: white; font-family: monospace; text-align: center; margin: 0; padding: 0; }
+canvas {
+  width: 100%;
+  max-width: 1200px; /* máximo para desktop */
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border: 1px solid white;
+  background-color: #222;
+}
+#controls { margin-top: 10px; }
+input { margin: 5px; padding: 3px; }
+</style>
+</head>
+<body>
+<h1>QBasic Gorillas - Mainzorro Edition</h1>
+<canvas id="gameCanvas"></canvas>
+<div id="controls">
+<div id="playerInputs"></div>
+</div>
+<footer style="margin-top: 20px; font-size: 12px;">
+Gorillas é um jogo clássico criado originalmente pela IBM/Microsoft nos anos 90.<br>
+Esta versão é uma homenagem sem fins lucrativos.<br>
+Desenvolvido por João Sousa e Cogito by Mainzorro.
+</footer>
+<script src="js/game.js"></script>
+</body>
+</html>
