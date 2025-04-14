@@ -15,8 +15,18 @@ canvas {
   border: 1px solid white;
   background-color: #222;
 }
-#controls { margin-top: 10px; }
-input { margin: 5px; padding: 3px; }
+#controls { margin: 10px auto;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+input, button {
+  padding: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
 </style>
 </head>
 <body>
