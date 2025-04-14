@@ -29,7 +29,7 @@ function generateMap(){
         let windows = [];
         for(let wy=0; wy<h; wy+=20){
             if(Math.random()>0.5){
-                windows.push(wy);
+                windows.push(canvas.height - h + wy);
             }
         }
         buildings.push({x:x, y:canvas.height-h, w:40, h:h, windows:windows});
@@ -49,7 +49,7 @@ function drawMap(){
         ctx.fillRect(b.x, b.y, b.w, b.h);
         ctx.fillStyle = 'yellow';
         b.windows.forEach(wy=>{
-            ctx.fillRect(b.x+10, b.y+b.h-wy, 5, 5);
+            ctx.fillRect(b.x+10, wy, 5, 5);
         });
         ctx.fillStyle = '#555';
     });
@@ -90,13 +90,13 @@ function update(){
     drawSky();
     drawMap();
     gorillas.forEach((g,i)=>{
-    if (gorilaImg.complete) {
-        ctx.drawImage(gorilaImg, g.x-20, g.y-40, 40, 40);
-    } else {
-        ctx.fillStyle = i==0?'green':'red';
-        ctx.fillRect(g.x-10, g.y-40, 20, 40);
-    }
-});
+        if (gorilaImg.complete) {
+            ctx.drawImage(gorilaImg, g.x-20, g.y-40, 40, 40);
+        } else {
+            ctx.fillStyle = i==0?'green':'red';
+            ctx.fillRect(g.x-10, g.y-40, 20, 40);
+        }
+    });
 
     explosions.forEach(e=>{
         ctx.fillStyle='orange';
@@ -124,14 +124,12 @@ function update(){
             if(banana.x > b.x && banana.x < b.x + b.w && banana.y > b.y && banana.y < b.y + b.h){
                 b.h -= 10;
                 b.y += 10;
-                // Ajustar janelas para nova altura visível
-                b.windows = b.windows.filter(wy => (canvas.height - b.y - wy) <= b.h);
-                                
+                b.windows = b.windows.filter(wy => wy >= b.y); // limpar janelas fora do prédio
                 createExplosion(banana.x, banana.y);
                 banana.active=false;
                 currentPlayer=1-currentPlayer;
                 nextTurn();
-                }
+            }
         });
 
         gorillas.forEach((g,i)=>{
@@ -168,3 +166,4 @@ function nextTurn(){
 
 askNames();
 update();
+
