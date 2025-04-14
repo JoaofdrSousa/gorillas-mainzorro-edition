@@ -122,12 +122,16 @@ function update(){
 
         buildings.forEach(b=>{
             if(banana.x > b.x && banana.x < b.x + b.w && banana.y > b.y && banana.y < b.y + b.h){
-                b.h -= 10;
-                b.y += 10;
-                createExplosion(banana.x, banana.y);
-                banana.active=false;
-                currentPlayer=1-currentPlayer;
-                nextTurn();
+              b.h -= 10;
+b.y += 10;
+
+// Remover janelas que já não existem após destruição
+b.windows = b.windows.filter(wy => wy < b.h);
+
+createExplosion(banana.x, banana.y);
+banana.active=false;
+currentPlayer=1-currentPlayer;
+nextTurn();
             }
         });
 
