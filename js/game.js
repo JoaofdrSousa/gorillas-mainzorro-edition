@@ -1,7 +1,7 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const controls = document.getElementById('playerInputs');
-const powerFactor = 0.5; //queres mais rapido, aumentas, queres mais baixo, diminuis
+const powerFactor = 0.3; //queres mais rapido, aumentas, queres mais baixo, diminuis
 
 
 
@@ -65,13 +65,21 @@ function drawSky(){
     ctx.fillStyle = 'white';
     stars.forEach(s=>ctx.fillRect(s.x, s.y, 2, 2));
 
+    if (!gameStarted) {
+        ctx.font = 'bold 20px monospace';
+        ctx.fillStyle = 'orange';
+        ctx.textAlign = 'center';
+        ctx.fillText('GORILLAS MAINZORRO EDITION', canvas.width / 2, canvas.height / 2 - 20);
+        ctx.font = '16px monospace';
+        ctx.fillText('Clica em "Start Game" para começares!', canvas.width / 2, canvas.height / 2 + 10);
+    }
+
     if (gameStarted) {
         ctx.font = '16px monospace';
         ctx.fillStyle = 'white';
         ctx.fillText('🌬️ Vento: ' + (wind === 0 ? '-' : (wind > 0 ? '→ ' + wind : '← ' + Math.abs(wind))), 10, 20);
     }
-	
-	  // Desenha lua SÓ SE o jogo começou
+
     if (gameStarted) {
         ctx.beginPath();
         ctx.arc(canvas.width - 80, 80, 30, 0, Math.PI * 2);
@@ -218,7 +226,8 @@ function update(){
     // Movimento da banana
     if(banana.active){
        banana.t += 0.3;
-		banana.x = banana.startX + (banana.vx * banana.t) + 0.5 * (wind / 5) * banana.t ** 2;
+		banana.x = banana.startX + (banana.vx * banana.t) + 0.5 * (wind / 10) * banana.t ** 2;
+
 		banana.y = banana.startY + (banana.vy * banana.t) + 0.5 * gravity * banana.t ** 2;
 
         if (bananaImg.complete) {
