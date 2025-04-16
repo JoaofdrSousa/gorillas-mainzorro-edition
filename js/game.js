@@ -311,7 +311,7 @@ function startGame(){
 
 
 function nextTurn(){
-    wind = Math.floor(Math.random() * 21) - 10; // novo vento por jogada
+    wind = Math.floor(Math.random() * 11) - 5; // novo vento por jogada
       controls.innerHTML = `
         <div style="color: orange; font-weight: bold; font-family: monospace; font-size: 18px; margin-bottom: 10px;">
             ${playerNames[currentPlayer]}'s Turn
