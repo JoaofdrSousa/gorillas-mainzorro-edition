@@ -77,6 +77,7 @@ function drawSky(){
     if (gameStarted) {
         ctx.font = '16px monospace';
         ctx.fillStyle = 'white';
+	ctx.textAlign = 'left'; // <-- garante o alinhamento
         ctx.fillText('🌬️ Vento: ' + (wind === 0 ? '-' : (wind > 0 ? '→ ' + wind : '← ' + Math.abs(wind))), 10, 20);
     }
 
