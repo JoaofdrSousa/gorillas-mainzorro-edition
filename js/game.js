@@ -227,7 +227,7 @@ function update(){
     // Movimento da banana
     if(banana.active){
        banana.t += 0.3;
-		banana.x = banana.startX + (banana.vx * banana.t) + 0.5 * (wind / 10) * banana.t ** 2;
+		banana.x = banana.startX + (banana.vx * banana.t) + 0.5 * (wind / 30) * banana.t ** 2;
 
 		banana.y = banana.startY + (banana.vy * banana.t) + 0.5 * gravity * banana.t ** 2;
 
