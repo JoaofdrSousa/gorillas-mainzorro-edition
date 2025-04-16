@@ -1,7 +1,7 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const controls = document.getElementById('playerInputs');
-const powerFactor = 0.3; //queres mais rapido, aumentas, queres mais baixo, diminuis
+const powerFactor = 0.5; //queres mais rapido, aumentas, queres mais baixo, diminuis
 
 
 
